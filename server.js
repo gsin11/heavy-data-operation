@@ -18,3 +18,5 @@ expressApp.use(function(req, res) {
 expressApp.listen(port);
 
 console.log('RESTful API server started on: ' + port);
+
+module.exports = expressApp;

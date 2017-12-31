@@ -1,15 +1,13 @@
 'use strict'
 
 const fs = require('fs'),
-  path = require('path'),
   ReadJSONStream = require('read-json-stream').default,
   YAML = require('json2yaml'),
-  filePath = path.join(__dirname, '../../data/records.json'),
-  writablePath = path.join(__dirname, '../../data/records_yaml.yaml');
+  statics = require('../../constants');
 
 exports.convertFile = (callback) => {
-  ReadJSONStream(filePath).done((err, data) => {
-    let ws = fs.createWriteStream(writablePath);
+  ReadJSONStream(statics.inputFile).done((err, data) => {
+    let ws = fs.createWriteStream(statics.outputFile);
     for(var index in data) {
       data[index]['size'] = data.length;
       ws.write(YAML.stringify(data[index]));

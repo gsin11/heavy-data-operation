@@ -3,11 +3,14 @@
 ## Install dependencies
 `$ npm install`
 
-## Run the application
-`$ npm run start`
+## Run the service
+`$ npm run start`<br/>
 
-## API request
-`http://localhost:3000`
+#### Convert JSON to YAML file
+`$ http://localhost:3000/`
 
-### Check converted file
-`/data/records_yaml.yaml`
+#### Delete YAML file
+`$ http://localhost:3000/delete`
+
+## Run test cases
+`$ npm run test`

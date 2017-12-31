@@ -6,4 +6,7 @@ module.exports = (app) => {
   app.route('/')
     .get(dataConverter.convertToYAML);
 
+  app.route('/delete')
+    .get(dataConverter.deleteFile);
+
 };
